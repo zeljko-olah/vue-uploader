@@ -219,7 +219,7 @@
     background-color #E1F5FE !important
 
 .table__card-actions
-  height auto
+  height 5rem
   transition all .5s ease-in
 
 </style>

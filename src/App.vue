@@ -10,7 +10,7 @@
     <app-jumbotron />
 
     <!-- MAKE 1 COL ON SMALL AND 2 COLS ON LARGE SCREENS -->
-    <v-container>
+    <v-container fluid>
       <v-layout row wrap>
         <v-flex xs12 sm10 offset-sm1 md4>
 
@@ -65,6 +65,10 @@
 *****************/
 
 [v-cloak] > * { display none }
+
+.container
+  @media screen and (max-width: 600px)
+    padding 1rem .5rem !important
 
 .fade-enter-active,
 .fade-leave-active

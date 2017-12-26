@@ -6,7 +6,7 @@
         <v-card dark color="light-blue darken-1">
           <v-container fluid>
             <v-layout :column="orientation" :row="!orientation">
-              <v-flex xs12 sm4 md6 offset-sm1 offset-md2>
+              <v-flex xs10 offset-xs1 md6 offset-md2>
 
                 <!-- CARD COMPONENT DESCRIPTION -->
                 <v-card flat color="light-blue darken-1">
@@ -26,7 +26,7 @@
                 </v-card>
 
               </v-flex>
-              <v-flex xs12 sm3 offset-sm1 offset-md0>
+              <v-flex xs10 offset-xs1 md3 offset-md0>
                 <!-- CARD COMPONENT SOCIAL ICONS -->
                 <v-card flat color="light-blue darken-1">
 
@@ -80,11 +80,11 @@
           color="light-blue darken-2"
           class="pa-1">
           <v-container>
-            <v-layout row>
+            <v-layout row class="text-xs-center">
               <v-flex xs12 sm6 offset-sm3>
-                <span>Made with <i class="fa fa-heart"></i> and VueJS, Vuex, Vuetify and Firebase by <strong>Zeljko Olah</strong> © {{ new Date().getFullYear() }}</span>
+                <span class="appfooter__copyright">Made with <i class="fa fa-heart"></i> and VueJS, Vuex, Vuetify and Firebase by <strong>Zeljko Olah</strong> © {{ new Date().getFullYear() }}</span>
                 <br>
-                <span>Inspiration from dear Front-End friend <strong>Nikola Lakovic.</strong></span>
+                <span class="appfooter__copyright">Inspiration from dear Front-End friend <strong>Nikola Lakovic.</strong></span>
               </v-flex>
             </v-layout>
           </v-container>
@@ -130,7 +130,7 @@ export default {
   },
   methods: {
     onResize () {
-      this.isMobile = window.innerWidth < 600
+      this.isMobile = window.innerWidth < 960
     }
   }
 }
@@ -146,6 +146,9 @@ export default {
 .appfooter
   position relative
   margin-top 4rem
+
+  &__copyright
+    font-size .7rem
 
   & a
     text-decoration none

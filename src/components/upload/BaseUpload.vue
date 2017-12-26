@@ -58,12 +58,13 @@
   position: initial
   border-radius 5px
   transition top .5s ease-in
+  z-index 10
 
   /* Position fixed for large screens */
   @media screen and (min-width: 960px) {
-    transform scale(.9)
+    transform scale(.8)
     position fixed
-    left 2rem
+    left .5rem
     /* Top position dinamically updated - helper function in utils */
   }
   @media screen and (min-width: 1264px) {
