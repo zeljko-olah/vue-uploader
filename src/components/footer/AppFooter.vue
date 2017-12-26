@@ -5,8 +5,8 @@
       <v-layout column>
         <v-card dark color="light-blue darken-1">
           <v-container fluid>
-            <v-layout>
-              <v-flex sm6 offset-sm2>
+            <v-layout :column="orientation" :row="!orientation">
+              <v-flex xs12 sm4 md6 offset-sm1 offset-md2>
 
                 <!-- CARD COMPONENT DESCRIPTION -->
                 <v-card flat color="light-blue darken-1">
@@ -26,7 +26,7 @@
                 </v-card>
 
               </v-flex>
-              <v-flex sm3>
+              <v-flex xs12 sm3 offset-sm1 offset-md0>
                 <!-- CARD COMPONENT SOCIAL ICONS -->
                 <v-card flat color="light-blue darken-1">
 
@@ -81,7 +81,7 @@
           class="pa-1">
           <v-container>
             <v-layout row>
-              <v-flex sm6 offset-sm2>
+              <v-flex xs12 sm6 offset-sm3>
                 <span>Made with <i class="fa fa-heart"></i> and VueJS, Vuex, Vuetify and Firebase by <strong>Zeljko Olah</strong> © {{ new Date().getFullYear() }}</span>
                 <br>
                 <span>Inspiration from dear Front-End friend <strong>Nikola Lakovic.</strong></span>
@@ -107,6 +107,35 @@
     </footer>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      isMobile: false
+    }
+  },
+  computed: {
+    orientation () {
+      return this.isMobile
+    }
+  },
+  mounted () {
+    this.onResize()
+    window.addEventListener('resize', this.onResize, { passive: true })
+  },
+  beforeDestroy () {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.onResize, { passive: true })
+    }
+  },
+  methods: {
+    onResize () {
+      this.isMobile = window.innerWidth < 600
+    }
+  }
+}
+</script>
+
 <style lang="stylus">
 
 /**********************
@@ -116,6 +145,7 @@
 /* Apply small decoration with ::after and ::before pseudo classes */
 .appfooter
   position relative
+  margin-top 4rem
 
   & a
     text-decoration none

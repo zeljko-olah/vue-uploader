@@ -16,6 +16,8 @@
 
           <!-- SPINER -->
           <v-card-text v-if="loading" class="text-xs-center">
+
+            <!-- show the spinner if loading true -->
             <v-progress-circular
               indeterminate
               class="primary--text"

@@ -11,12 +11,13 @@
 
         <!-- ADD FILE BUTTON -->
         <v-btn
+          class="upload__button"
           @click="onPickFile"
           fab
           dark
           color="amber lighten-2"
           :disabled="addFileDisabled">
-          <v-icon large>add</v-icon>
+          <v-icon class="upload__button-icon" large>add</v-icon>
         </v-btn>
 
         <!-- INPUT FILE FOR REAL FILE HANDLING -->
@@ -29,42 +30,46 @@
 
         <!-- UPLOAD BUTTON -->
         <v-btn
+        class="upload__button"
           @click="uploadFile"
           fab
           dark
           color="green lighten-3"
           :disabled="uploadDisabled">
-          <v-icon dark large>cloud_upload</v-icon>
+          <v-icon class="upload__button-icon" dark large>cloud_upload</v-icon>
         </v-btn>
 
         <!-- RESET BUTTON -->
         <v-btn
+        class="upload__button"
           @click="resetForm"
           fab
           dark
           color="red lighten-3"
           :disabled="deleteDisabled">
-          <v-icon dark large>do_not_disturb_alt</v-icon>
+          <v-icon class="upload__button-icon" dark large>do_not_disturb_alt</v-icon>
         </v-btn>
 
         <!-- PLAY BUTTON -->
         <v-btn
+        class="upload__button"
           @click="play"
           fab
           dark
           color="green lighten-3"
           :disabled="playDisabled">
-          <v-icon dark large>play_arrow</v-icon>
+          <v-icon class="upload__button-icon" dark large>play_arrow</v-icon>
         </v-btn>
 
         <!-- PAUSE BUTTON -->
         <v-btn
+        class="upload__button"
           @click="pause"
           fab
           dark
           color="deep-purple lighten-3"
           :disabled="pauseDisabled">
-          <v-icon dark large>pause</v-icon>
+          <v-icon class="upload__button-icon" dark large>pause</v-icon>
         </v-btn>
       </div>
     </form>
@@ -258,6 +263,18 @@ export default {
 </script>
 
 <style lang="stylus">
+
+.upload
+  &__button
+    @media screen and (max-width: 600px)
+      width 38px
+      height 38px
+  &__button-icon
+    @media screen and (max-width: 600px)
+      font-size 24px !important
+      width 18px !important
+      height 18px !important
+
 
 /* Override vuetify default styles for disabled buttons */
 #buttons button.btn--disabled
